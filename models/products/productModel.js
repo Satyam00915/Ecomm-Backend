@@ -20,6 +20,14 @@ const Product = sequelize.define("Product", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  categoryId:{
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  subCategoryId:{
+    type: DataTypes.INTEGER,
+    allowNull: false
+  }
 }, {
   freezeTableName: true
 });
