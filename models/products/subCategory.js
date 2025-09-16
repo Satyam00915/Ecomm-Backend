@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../config/dbConnect";
+import { sequelize } from "../../config/dbConnect.js";
 
 const SubCategory = sequelize.define("SubCategory", {
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
@@ -7,13 +7,9 @@ const SubCategory = sequelize.define("SubCategory", {
   categoryId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    references: {
-      model: "Category",
-      key: "id",
-    },
-    onDelete: "CASCADE",
-    onUpdate: "CASCADE",
   },
+}, {
+  freezeTableName: true
 });
 
 export default SubCategory;
