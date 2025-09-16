@@ -1,6 +1,14 @@
 import { Sequelize } from "sequelize";
-const sequelize = new Sequelize("database", "username", "password", {
-  host: "localhost",
+import dotenv from 'dotenv'
+dotenv.config();
+
+const dbname= process.env.DB_NAME;
+const username= process.env.DB_USER;
+const password= process.env.DB_PASSWORD;
+const host= process.env.HOST;
+const sequelize = new Sequelize(dbname, username, password, {
+  host: host,
+  port: process.env.DB_PORT,
   dialect:
     "mysql" /* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */,
 });
