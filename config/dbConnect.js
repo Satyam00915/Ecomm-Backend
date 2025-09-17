@@ -11,6 +11,7 @@ const sequelize = new Sequelize(dbname, username, password, {
   port: process.env.DB_PORT,
   dialect:
     "mysql" /* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */,
+  logging: false,
 });
 
 const connectToDb = async () => {
