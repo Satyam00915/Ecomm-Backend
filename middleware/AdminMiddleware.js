@@ -1,3 +1,4 @@
+import jwt from 'jsonwebtoken';
 export const AuthAdminMiddleware = (req, res, next) => {
     const ADMIN_API_KEY = process.env.ADMIN_API_KEY;
     if (!ADMIN_API_KEY) {

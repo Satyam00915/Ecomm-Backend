@@ -9,16 +9,17 @@ import {
   deleteSubCategory,
   getAllSubCategory,
 } from "../../controller/Admin/Product/subCategory.js";
+import { AdminMiddleware } from "../../middleware/AdminMiddleware.js";
 const router = express.Router();
 
 //Category
-router.post("/addCategory", addCategory);
-router.get("/getAllCategories", getAllCategories);
-router.post("/removeCategory", removeCategory);
+router.post("/addCategory",AdminMiddleware, addCategory);
+router.get("/getAllCategories",AdminMiddleware,getAllCategories);
+router.post("/removeCategory",AdminMiddleware, removeCategory);
 
 //SubCategory
-router.post("/addSubCategory", addSubCategory);
-router.post("/deleteSubCategory", deleteSubCategory);
-router.get("/getAllSubCategory", getAllSubCategory);
+router.post("/addSubCategory",AdminMiddleware, addSubCategory);
+router.post("/deleteSubCategory",AdminMiddleware, deleteSubCategory);
+router.get("/getAllSubCategory",AdminMiddleware, getAllSubCategory);
 
 export default router;
