@@ -1,7 +1,10 @@
 import express from "express";
-import adminProductRoutes from "../routes/admin/products.js";
+import adminProductRoutes from "../routes/admin/productRoutes.js";
+import AuthRoutes from "../routes/auth/authRoutes.js"
 const router = express.Router();
 
 router.use('/products', adminProductRoutes);
+// user auth routes
+router.use('/auth', AuthRoutes);
 
 export default router;
