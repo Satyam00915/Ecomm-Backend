@@ -2,12 +2,12 @@ import express from "express"
 import Signup from "../../controller/auth/signUp.js"
 import SignIn from "../../controller/auth/signIn.js"
 import VerifyOTP from "../../controller/auth/verifyOtp.js"
-import {AuthAdminMiddleware} from "../../middleware/AdminMiddleware.js"
+import { AuthUserMiddleware } from "../../middleware/UserMiddleware.js"
 
 const router = express.Router()
 
-router.post('/signup',AuthAdminMiddleware, Signup)
-router.post('/signin',AuthAdminMiddleware, SignIn)
-router.post('/verify-otp',AuthAdminMiddleware, VerifyOTP)
+router.post('/signup',AuthUserMiddleware, Signup)
+router.post('/signin',AuthUserMiddleware, SignIn)
+router.post('/verify-otp',AuthUserMiddleware, VerifyOTP)
 
 export default router
