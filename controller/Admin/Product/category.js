@@ -45,7 +45,6 @@ export const getAllCategories = async (req,res)=>{
 }
 
 // remove category
-
 export const removeCategory = async (req,res)=>{
     const {id} = req.body;
 
