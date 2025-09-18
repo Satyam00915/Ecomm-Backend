@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import {connectToDb,sequelize} from "./config/dbConnect.js";
 import "./models/index.js"
+import "./models/auth/adminModel.js"
 import apiRoutes from "./api/api.js"
 dotenv.config();
 

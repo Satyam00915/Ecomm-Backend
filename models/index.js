@@ -1,4 +1,3 @@
-import {sequelize} from "../config/dbConnect.js"
 import Category from "./products/categoryModel.js";
 import SubCategory from "./products/subCategory.js";
 import {Product, ProductBrand, ProductColor, ProductImage, ProductSize} from "../models/products/productModel.js"
